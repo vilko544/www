@@ -6146,7 +6146,7 @@ function delete_program(id) {
 }
 
 function submit_program(id) {
-    $("#program-"+id).removeClass("hasChanges");
+    $("#program-"+id).find(".hasChanges").removeClass("hasChanges");
 
     if (checkOSVersion(210)) {
         submit_program21(id);
@@ -6725,7 +6725,7 @@ function show_about() {
             "<div class='ui-content' role='main'>" +
                 "<ul data-role='listview' data-inset='true'>" +
                     "<li>" +
-                        "<p>"+_("User manual for OpenSprinkler is available at")+" <a class='iab' target='_blank' href='https://opensprinkler.com/wp-content/uploads/2014/10/os_fw210_manual.pdf'>https://opensprinkler.com/user-manual/</a></p>" +
+                        "<p>"+_("User manual for OpenSprinkler is available at")+" <a class='iab' target='_blank' href='https://opensprinkler.freshdesk.com/support/solutions/folders/5000147083'>https://support.opensprinkler.com</a></p>" +
                     "</li>" +
                 "</ul>" +
                 "<ul data-role='listview' data-inset='true'>" +
@@ -7916,12 +7916,12 @@ function update_lang(lang) {
 function languageSelect() {
     $("#localization").popup("destroy").remove();
 
-//  {af: _("Afrikaans"), am: _("Amharic"), zh: _("Chinese"), cs: _("Czech"), nl: _("Dutch"), en: _("English"), fr: _("French"), de: _("German"), he: _("Hebrew"), hu: _("Hungarian"), it: _("Italian"), mn: _("Mongolian"), no: _("Norwegian"), pl: _("Polish"), pt: _("Portuguese"), sk: _("Slovak"), sl: _("Slovenian"), es: _("Spanish")}
+//  {af: _("Afrikaans"), am: _("Amharic"), zh: _("Chinese"), hr: _("Croatian"), cs: _("Czech"), nl: _("Dutch"), en: _("English"), fr: _("French"), de: _("German"), he: _("Hebrew"), hu: _("Hungarian"), it: _("Italian"), mn: _("Mongolian"), no: _("Norwegian"), pl: _("Polish"), pt: _("Portuguese"), sk: _("Slovak"), sl: _("Slovenian"), es: _("Spanish")}
 
     var popup = "<div data-role='popup' data-overlay-theme='b' id='localization' data-corners='false'>" +
                 "<ul data-inset='true' data-role='listview' id='lang' data-corners='false'>" +
                 "<li data-role='list-divider' data-theme='b' class='center' data-translate='Localization'>"+_("Localization")+"</li>",
-        codes = {af: "Afrikaans", am: "Amharic", zh: "Chinese", cs: "Czech", nl: "Dutch", en: "English", fr: "French", de: "German", he: "Hebrew", hu: "Hungarian", it: "Italian", mn: "Mongolian", no: "Norwegian", pl: "Polish", pt: "Portuguese", sk: "Slovak", sl: "Slovenian", es: "Spanish"};
+        codes = {af: "Afrikaans", am: "Amharic", zh: "Chinese", hr: "Croatian", cs: "Czech", nl: "Dutch", en: "English", fr: "French", de: "German", he: "Hebrew", hu: "Hungarian", it: "Italian", mn: "Mongolian", no: "Norwegian", pl: "Polish", pt: "Portuguese", sk: "Slovak", sl: "Slovenian", es: "Spanish"};
 
     $.each(codes,function(key,name){
         popup += "<li><a href='#' data-translate='"+name+"' data-lang-code='"+key+"'>"+_(name)+"</a></li>";
